@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import {
 	Container,
 	Left,
@@ -16,6 +17,7 @@ import {
 const Header = () => {
 	const [open, setOpen] = useState(false);
 	const ref = useRef();
+	const router = useRouter();
 	useEffect(() => {
 		const ClickedOutside = (e) => {
 			if (open && ref.current && !ref.current.contains(e.target)) {
@@ -38,22 +40,22 @@ const Header = () => {
 			<Right ref={ref}>
 				<NavList>
 					<li>
-						<Link href="#about">
+						<Link href={router.pathname === "/" ? "#about" : "/#about"}>
 							<NavLink>About</NavLink>
 						</Link>
 					</li>
 					<li>
-						<Link href="#skills">
+						<Link href={router.pathname === "/" ? "#skills" : "/#skills"}>
 							<NavLink>Skills</NavLink>
 						</Link>
 					</li>
 					<li>
-						<Link href="#work">
+						<Link href={router.pathname === "/" ? "#work" : "/#work"}>
 							<NavLink>Work</NavLink>
 						</Link>
 					</li>
 					<li>
-						<Link href="#contact">
+						<Link href={router.pathname === "/" ? "#contact" : "/#contact"}>
 							<NavLink>Contact</NavLink>
 						</Link>
 					</li>
@@ -66,22 +68,22 @@ const Header = () => {
 				</HamburgerContainer>
 				<MobileNavList open={open} onClick={() => setOpen(!open)}>
 					<li>
-						<Link href="#about">
+						<Link href={router.pathname === "/" ? "#about" : "/#about"}>
 							<MobileNavLink>About</MobileNavLink>
 						</Link>
 					</li>
 					<li>
-						<Link href="#skills">
+						<Link href={router.pathname === "/" ? "#skills" : "/#skills"}>
 							<MobileNavLink>Skills</MobileNavLink>
 						</Link>
 					</li>
 					<li>
-						<Link href="#work">
+						<Link href={router.pathname === "/" ? "#work" : "/#work"}>
 							<MobileNavLink>Work</MobileNavLink>
 						</Link>
 					</li>
 					<li>
-						<Link href="#contact">
+						<Link href={router.pathname === "/" ? "#contact" : "/#contact"}>
 							<MobileNavLink>Contact</MobileNavLink>
 						</Link>
 					</li>

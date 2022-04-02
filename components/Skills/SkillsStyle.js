@@ -8,8 +8,9 @@ export const Container = styled.div`
 	box-sizing: content-box;
 	margin-bottom: 80px;
 	padding-top: 50px;
-
-	/* height: 40vh; */
+	@media ${(props) => props.theme.breakpoints.sm} {
+		margin-bottom: 10px;
+	}
 `;
 export const Wrapper = styled.div`
 	display: flex;

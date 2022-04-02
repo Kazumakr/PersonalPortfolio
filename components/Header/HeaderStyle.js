@@ -9,6 +9,9 @@ export const Container = styled.div`
 	z-index: 3;
 	background-color: white;
 	box-shadow: 0px 15px 10px -15px rgba(149, 157, 165, 0.2);
+	@media ${(props) => props.theme.breakpoints.sm} {
+		padding: 15px 0;
+	}
 `;
 export const Left = styled.div``;
 
@@ -94,7 +97,6 @@ export const MobileNavList = styled.ul`
 	padding: 0;
 	background-color: white;
 	position: fixed;
-	/* position: absolute; */
 	transform: ${({ open }) => (open ? "translateX(0%)" : "translateX(100%)")};
 	top: 40px;
 	right: 0;
@@ -109,7 +111,6 @@ export const MobileNavList = styled.ul`
 	}
 
 	li {
-		/* width: 100%; */
 		&:hover {
 			opacity: 0.7;
 		}

@@ -5,14 +5,28 @@ import Skills from "../components/Skills/Skills";
 import Work from "../components/Work/Work";
 import Layout from "../layout/Layout";
 
-export default function Home() {
+import { getPaginatedWork } from "../lib/api";
+
+import PreviewAlert from "../components/PreviewAlert/PreviewAlert";
+export default function Home({ works, preview }) {
 	return (
 		<Layout>
+			{preview && <PreviewAlert />}
 			<Hero />
 			<About />
 			<Skills />
-			<Work />
+			<Work works={works} />
 			<Contact />
 		</Layout>
 	);
+}
+
+export async function getStaticProps({ preview = false }) {
+	const works = await getPaginatedWork({ offset: 0 });
+	return {
+		props: {
+			works,
+			preview,
+		},
+	};
 }

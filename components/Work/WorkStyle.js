@@ -11,15 +11,17 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
 	width: 90%;
 	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 `;
 export const WorkSection = styled.div`
 	display: flex;
 	justify-content: space-between;
-	margin: 100px 0 100px 0;
+	margin-bottom: 100px;
 	@media ${(props) => props.theme.breakpoints.md} {
 		flex-direction: column-reverse;
 		align-items: center;
-		margin: 100px 0 50px 0;
 	}
 `;
 
@@ -133,12 +135,6 @@ export const Button = styled.button`
 		}
 	}
 `;
-export const IconContainer = styled.div`
-	display: flex;
-	justify-content: space-between;
-	width: 150px;
-	margin-top: 15px;
-`;
 export const Img = styled.img`
 	width: 500px;
 	height: 100%;
@@ -152,6 +148,13 @@ export const Img = styled.img`
 	@media ${(props) => props.theme.breakpoints.sm} {
 		width: 100%;
 	}
+`;
+
+export const IconContainer = styled.div`
+	display: flex;
+	justify-content: space-between;
+	width: 150px;
+	margin-top: 15px;
 `;
 export const Github = styled(FaGithub)`
 	font-size: 28px;

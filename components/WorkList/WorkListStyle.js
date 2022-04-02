@@ -1,61 +1,84 @@
 import styled from "styled-components";
-import { FaGithub, FaLinkedin, FaMedium } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaMedium } from "react-icons/fa";
 
 export const Container = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 40px 0;
-	height: 90vh;
-	@media ${(props) => props.theme.breakpoints.sm} {
-		height: 80vh;
-	}
+	margin: 0 auto;
+	max-width: 1000px;
+	box-sizing: content-box;
+	margin-bottom: 50px;
+	padding-top: 50px;
 `;
 export const Wrapper = styled.div`
+	width: 90%;
+	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
-	@media ${(props) => props.theme.breakpoints.md} {
+	align-items: center;
+`;
+export const WorkCard = styled.div`
+	display: flex;
+	flex-direction: column;
+`;
+
+export const SectionDivider = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 80px auto;
+	@media ${(props) => props.theme.breakpoints.lg} {
 		width: 90%;
 	}
 `;
-export const Text = styled.p`
-	font-weight: 300;
-	font-size: 28px;
-	line-height: 40px;
-	color: rgba(0, 0, 0, 0.5);
-	@media ${(props) => props.theme.breakpoints.sm} {
-		font-size: 22px;
-		line-height: 30px;
+export const SectionTitle = styled.h2`
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 56px;
+	@media ${(props) => props.theme.breakpoints.md} {
+		font-size: 36px;
 	}
 `;
+export const Hr = styled.hr`
+	width: 80%;
+`;
+
 export const Title = styled.h2`
-	font-weight: 800;
-	font-size: 65px;
-	width: max-content;
-	max-width: 100%;
-	margin-bottom: 16px;
-	@media ${(props) => props.theme.breakpoints.sm} {
-		font-size: 34px;
-	}
-`;
-export const SubTitle = styled.span`
-	font-size: 56px;
-	font-weight: 800;
+	font-size: 36px;
+	font-weight: 600;
 	margin-bottom: 10px;
+	margin-top: 15px;
+	&:hover {
+		text-decoration: underline;
+	}
 	@media ${(props) => props.theme.breakpoints.sm} {
-		font-size: 32px;
+		font-size: 28px;
 	}
 `;
 export const Desc = styled.p`
 	font-weight: 300;
-	max-width: 800px;
+	max-width: 380px;
 	font-size: 24px;
 	line-height: 40px;
-	padding-bottom: 3.6rem;
+	margin-bottom: 10px;
+	@media ${(props) => props.theme.breakpoints.md} {
+		width: 80%;
+	}
+	@media ${(props) => props.theme.breakpoints.sm} {
+		font-size: 18px;
+		line-height: 30px;
+	}
+`;
+export const Tech = styled.span`
+	font-weight: 300;
+	max-width: 800px;
+	font-size: 20px;
+	line-height: 35px;
+	margin-bottom: 10px;
 	color: rgba(0, 0, 0, 0.5);
 	@media ${(props) => props.theme.breakpoints.sm} {
 		font-size: 18px;
 		line-height: 30px;
+		width: 80%;
+		word-break: break-all;
 	}
 `;
 export const ButtonText = styled.span`
@@ -75,9 +98,6 @@ export const Button = styled.button`
 	position: relative;
 	overflow: hidden;
 
-	@media ${(props) => props.theme.breakpoints.sm} {
-		width: 100px;
-	}
 	&::before {
 		content: "" "";
 		position: absolute;
@@ -100,19 +120,26 @@ export const Button = styled.button`
 		}
 	}
 `;
-
-export const LinkSection = styled.div`
-	display: flex;
-	justify-content: space-between;
-`;
-
 export const IconContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	width: 150px;
 	margin-top: 15px;
 `;
-
+export const Img = styled.img`
+	width: 500px;
+	height: 100%;
+	border-radius: 10px;
+	object-fit: cover;
+	transition: all ease 0.5s;
+	&:hover {
+		transform: scale(1.1);
+		cursor: pointer;
+	}
+	@media ${(props) => props.theme.breakpoints.sm} {
+		width: 100%;
+	}
+`;
 export const Github = styled(FaGithub)`
 	font-size: 28px;
 	&:hover {
@@ -131,7 +158,7 @@ export const Medium = styled(FaMedium)`
 	}
 `;
 
-export const Linkedin = styled(FaLinkedin)`
+export const LinkIcon = styled(FaExternalLinkAlt)`
 	font-size: 28px;
 	&:hover {
 		opacity: 0.5;

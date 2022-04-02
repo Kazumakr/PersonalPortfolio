@@ -42,9 +42,6 @@ export const SectionDivider = styled.div`
 	@media ${(props) => props.theme.breakpoints.lg} {
 		width: 90%;
 	}
-	/* @media ${(props) => props.theme.breakpoints.md} {
-		width: 90%;
-	} */
 `;
 export const SectionTitle = styled.h2`
 	font-weight: 700;
@@ -91,5 +88,12 @@ export const Button = styled.button`
 		background-color: white;
 		border: 1px solid black;
 		cursor: pointer;
+	}
+`;
+
+export const NavLink = styled.a`
+	color: blue;
+	&:hover {
+		text-decoration: underline;
 	}
 `;

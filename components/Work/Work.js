@@ -23,7 +23,74 @@ import {
 	ButtonText,
 } from "./WorkStyle";
 
-const Work = () => {
+import { urlFor } from "../../lib/api";
+import { useGetWorksPages } from "../../actions/pagination";
+
+const WorkList = ({ data }) => {
+	return data.map((page) =>
+		page.map((work, index) => (
+			<WorkSection key={index}>
+				<Left>
+					<Link href={work.projectlink} passHref>
+						<NavLink target="_blank">
+							<Title>{work.title}</Title>
+						</NavLink>
+					</Link>
+					<Desc>{work.description}</Desc>
+					<Tech>{work.tech}</Tech>
+					<Link href="/work/[slug]" as={`/work/${work.slug}`}>
+						<NavLink>
+							<Button>
+								<ButtonText>Learn More</ButtonText>
+							</Button>
+						</NavLink>
+					</Link>
+					<IconContainer>
+						{work.githublink && (
+							<Link href={work.githublink} passHref>
+								<NavLink target="_blank">
+									<Github />
+								</NavLink>
+							</Link>
+						)}
+						{work.mediumlink && (
+							<Link href={work.mediumlink} passHref>
+								<NavLink target="_blank">
+									<Medium />
+								</NavLink>
+							</Link>
+						)}
+						{work.projectlink && (
+							<Link href={work.projectlink} passHref>
+								<NavLink target="_blank">
+									<LinkIcon />
+								</NavLink>
+							</Link>
+						)}
+					</IconContainer>
+				</Left>
+				<Right>
+					<Link href={work.projectlink} passHref>
+						<NavLink target="_blank">
+							<Img
+								src={urlFor(work.image)
+									.height(400)
+									.crop("center")
+									.fit("clip")
+									.url()}
+							/>
+						</NavLink>
+					</Link>
+				</Right>
+			</WorkSection>
+		))
+	);
+};
+
+const Work = ({ works }) => {
+	const { data, size, setSize, hitEnd } = useGetWorksPages({
+		works,
+	});
 	return (
 		<Container id="work">
 			<SectionDivider>
@@ -31,135 +98,19 @@ const Work = () => {
 				<Hr />
 			</SectionDivider>
 			<Wrapper>
-				<WorkSection>
-					<Left>
-						<Link href="https://quizzical-panini-3b7a85.netlify.app/" passHref>
-							<NavLink target="_blank">
-								<Title>OpenCloset</Title>
-							</NavLink>
-						</Link>
-						<Desc>
-							MERN stack project that allows users to manage items in a closet
-							and share them with other users. It is mixed style of EC site and
-							SNS.
-						</Desc>
-						<Tech>
-							ReactJS/NodeJS/Express/MongoDB/Styled-Components/Heroku/Netlify
-						</Tech>
+				<WorkList data={data || [works]} />
+				{hitEnd ? null : (
+					<Button onClick={() => setSize(size + 1)} disabled={hitEnd}>
+						<ButtonText>Load More</ButtonText>
+					</Button>
+				)}
+				{/* <Link href="/work/WorkList">
+					<NavLink>
 						<Button>
-							<ButtonText>Learn More</ButtonText>
+							<ButtonText>View More</ButtonText>
 						</Button>
-						<IconContainer>
-							<Link
-								href="https://github.com/Kazumakr/MERN_OpenCloset_frontend"
-								passHref
-							>
-								<NavLink target="_blank">
-									<Github />
-								</NavLink>
-							</Link>
-							<Medium />
-							<Link
-								href="https://quizzical-panini-3b7a85.netlify.app/"
-								passHref
-							>
-								<NavLink target="_blank">
-									<LinkIcon />
-								</NavLink>
-							</Link>
-						</IconContainer>
-					</Left>
-					<Right>
-						<Link href="https://quizzical-panini-3b7a85.netlify.app/" passHref>
-							<NavLink target="_blank">
-								<Img src="/images/OpenCloset.png" />
-							</NavLink>
-						</Link>
-					</Right>
-				</WorkSection>
-				<WorkSection>
-					<Left>
-						<Link href="https://spiffy-puppy-816ccb.netlify.app/" passHref>
-							<NavLink target="_blank">
-								<Title>WorkoutManager</Title>
-							</NavLink>
-						</Link>
-						<Desc>Created an application to help manage workout records.</Desc>
-						<Tech>
-							ReactJS/NodeJS/Sequelize/MySQL/Styled-Components/Heroku/Netlify
-						</Tech>
-						<Button>
-							<ButtonText>Learn More</ButtonText>
-						</Button>
-						<IconContainer>
-							<Link
-								href="https://github.com/Kazumakr/WorkoutManager_frontend"
-								passHref
-							>
-								<NavLink target="_blank">
-									<Github />
-								</NavLink>
-							</Link>
-							<Medium />
-							<Link href="https://spiffy-puppy-816ccb.netlify.app/" passHref>
-								<NavLink target="_blank">
-									<LinkIcon />
-								</NavLink>
-							</Link>
-						</IconContainer>
-					</Left>
-					<Right>
-						<Link href="https://spiffy-puppy-816ccb.netlify.app/" passHref>
-							<NavLink target="_blank">
-								<Img src="/images/WorkoutManager.png" />
-							</NavLink>
-						</Link>
-					</Right>
-				</WorkSection>
-				<WorkSection>
-					<Left>
-						<Link href="https://unruffled-jepsen-33fb63.netlify.app/" passHref>
-							<NavLink target="_blank">
-								<Title>OpenKitchen</Title>
-							</NavLink>
-						</Link>
-						<Desc>
-							A recipe blog for sharing cooking recipes using MERN stack.
-						</Desc>
-						<Tech>
-							ReactJS/NodeJS/Express/MongoDB/Styled-Components/Heroku/Netlify
-						</Tech>
-						<Button>
-							<ButtonText>Learn More</ButtonText>
-						</Button>
-						<IconContainer>
-							<Link
-								href="https://github.com/Kazumakr/MERN_OpenKitchen_front"
-								passHref
-							>
-								<NavLink target="_blank">
-									<Github />
-								</NavLink>
-							</Link>
-							<Medium />
-							<Link
-								href="https://unruffled-jepsen-33fb63.netlify.app/"
-								passHref
-							>
-								<NavLink target="_blank">
-									<LinkIcon />
-								</NavLink>
-							</Link>
-						</IconContainer>
-					</Left>
-					<Right>
-						<Link href="https://unruffled-jepsen-33fb63.netlify.app/" passHref>
-							<NavLink target="_blank">
-								<Img src="/images/OpenKitchen.png" />
-							</NavLink>
-						</Link>
-					</Right>
-				</WorkSection>
+					</NavLink>
+				</Link> */}
 			</Wrapper>
 		</Container>
 	);

@@ -27,7 +27,7 @@ const Hero = () => {
 				<SubTitle>Web Developer</SubTitle>
 				<Desc>
 					I'm passionate about creating modern web applications and I want to
-					use technology to make the world more convenient and enjoyable.Feel
+					use technology to make the world more convenient and enjoyable. Feel
 					free to contact me!
 				</Desc>
 				<LinkSection>

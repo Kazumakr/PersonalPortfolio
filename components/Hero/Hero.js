@@ -31,7 +31,7 @@ const Hero = () => {
 					free to contact me!
 				</Desc>
 				<LinkSection>
-					<Link href="KazumaKuramoto_Resume.pdf" passHref>
+					<Link href="/KazumaKuramoto_Resume.pdf" passHref>
 						<NavLink target="_blank">
 							<Button>
 								<ButtonText>Resume</ButtonText>

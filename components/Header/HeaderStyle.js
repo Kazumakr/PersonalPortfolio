@@ -12,6 +12,9 @@ export const Container = styled.div`
 	@media ${(props) => props.theme.breakpoints.sm} {
 		padding: 15px 0;
 	}
+	li {
+		list-style: none;
+	}
 `;
 export const Left = styled.div``;
 

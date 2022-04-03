@@ -18,4 +18,12 @@ export const Container = styled.div`
 	p {
 		line-height: 30px;
 	}
+	ol {
+		list-style-position: inside;
+		margin: 10px 0;
+	}
+	ul {
+		list-style-position: inside;
+		margin: 10px 0;
+	}
 `;

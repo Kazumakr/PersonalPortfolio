@@ -64,6 +64,7 @@ export const List = styled.ul`
 export const ListItem = styled.li`
 	margin: 5px 0;
 	font-size: 18px;
+	list-style: none;
 `;
 
 export const JavaScriptIcon = styled(SiJavascript)`

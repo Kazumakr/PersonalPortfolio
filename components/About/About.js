@@ -37,7 +37,7 @@ const About = () => {
 						and innovative by combining what I have learned so far.
 						<br />
 						Check my
-						<Link href="KazumaKuramoto_Resume.pdf" passHref>
+						<Link href="/KazumaKuramoto_Resume.pdf" passHref>
 							<NavLink target="_blank"> resume </NavLink>
 						</Link>
 						and my work.

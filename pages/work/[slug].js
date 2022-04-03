@@ -79,6 +79,7 @@ export async function getStaticProps({ params, preview = false, previewData }) {
 	const work = await getWorkBySlug(params.slug, preview);
 	return {
 		props: { work, preview },
+		revalidate: 1,
 	};
 }
 

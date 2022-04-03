@@ -28,5 +28,6 @@ export async function getStaticProps({ preview = false }) {
 			works,
 			preview,
 		},
+		revalidate: 1,
 	};
 }

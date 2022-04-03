@@ -30,11 +30,9 @@ const About = () => {
 				<Right>
 					<Title>Thank you for stopping by</Title>
 					<Text>
-						Hi, I'm Kazuma Kuramoto. I'm from Japan, now in Vancouver. Currently
-						I'm learning web development to make some ideas in my head come
-						true. When I was a university student, I built a facial recognition
-						program using machine learning, so I want to create something useful
-						and innovative by combining what I have learned so far.
+						{
+							"Hi, I'm Kazuma Kuramoto. I'm from Japan, now in Vancouver. Currently I'm learning web development to make some ideas in my head come true. When I was a university student, I built a facial recognition program using machine learning, so I want to create something useful and innovative by combining what I have learned so far."
+						}
 						<br />
 						Check my
 						<Link href="/KazumaKuramoto_Resume.pdf" passHref>

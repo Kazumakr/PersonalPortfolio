@@ -8,7 +8,7 @@ const serializers = {
 	types: {
 		code: ({ node: { language, code, filename } }) => {
 			return (
-				<div style={{ margin: "20px auto" }}>
+				<div style={{ margin: "20px auto", fontSize: "18px" }}>
 					<div className="code-filename">{filename}</div>
 					<HighlightCode language={language}>{code}</HighlightCode>
 				</div>

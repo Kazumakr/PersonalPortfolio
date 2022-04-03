@@ -26,7 +26,7 @@ const Contact = () => {
 					I’m currently looking for any new opportunities. If you are interested
 					in me, please feel free to contact me!
 				</Text>
-				<Link href={"mailto:kazumakuramoto.jp@gmail.com"}>
+				<Link href={"mailto:kazumakuramoto.jp@gmail.com"} passHref>
 					<Button>
 						<ButtonText>Send Email</ButtonText>
 					</Button>

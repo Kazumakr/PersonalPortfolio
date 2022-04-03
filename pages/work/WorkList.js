@@ -47,7 +47,7 @@ const WorkListCard = ({ data }) => {
 									</NavLink>
 								</Link>
 							) : (
-								<Link href="/work/[slug]" as={`/work/${work.slug}`}>
+								<Link href="/work/[slug]" as={`/work/${work.slug}`} passHref>
 									<NavLink>
 										<Img
 											src={urlFor(work.image)
@@ -69,7 +69,7 @@ const WorkListCard = ({ data }) => {
 										</NavLink>
 									</Link>
 								) : (
-									<Link href="/work/[slug]" as={`/work/${work.slug}`}>
+									<Link href="/work/[slug]" as={`/work/${work.slug}`} passHref>
 										<NavLink>
 											<Title>{work.title}</Title>
 										</NavLink>
@@ -79,7 +79,7 @@ const WorkListCard = ({ data }) => {
 								<Tech>{work.tech}</Tech>
 							</TextSection>
 							<IconSection>
-								<Link href="/work/[slug]" as={`/work/${work.slug}`}>
+								<Link href="/work/[slug]" as={`/work/${work.slug}`} passHref>
 									<NavLink>
 										<Button>
 											<ButtonText>Learn More</ButtonText>

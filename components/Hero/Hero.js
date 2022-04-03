@@ -26,9 +26,9 @@ const Hero = () => {
 				<Title>Kazuma Kuramoto</Title>
 				<SubTitle>Web Developer</SubTitle>
 				<Desc>
-					I'm passionate about creating modern web applications and I want to
-					use technology to make the world more convenient and enjoyable. Feel
-					free to contact me!
+					{
+						"I'm passionate about creating modern web applications and I want to use technology to make the world more convenient and enjoyable. Feel free to contact me!"
+					}
 				</Desc>
 				<LinkSection>
 					<Link href="/KazumaKuramoto_Resume.pdf" passHref>

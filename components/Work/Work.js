@@ -38,7 +38,7 @@ const WorkList = ({ data }) => {
 							</NavLink>
 						</Link>
 					) : (
-						<Link href="/work/[slug]" as={`/work/${work.slug}`}>
+						<Link href="/work/[slug]" as={`/work/${work.slug}`} passHref>
 							<NavLink>
 								<Title>{work.title}</Title>
 							</NavLink>
@@ -46,7 +46,7 @@ const WorkList = ({ data }) => {
 					)}
 					<Desc>{work.description}</Desc>
 					<Tech>{work.tech}</Tech>
-					<Link href="/work/[slug]" as={`/work/${work.slug}`}>
+					<Link href="/work/[slug]" as={`/work/${work.slug}`} passHref>
 						<NavLink>
 							<Button>
 								<ButtonText>Learn More</ButtonText>
@@ -91,7 +91,7 @@ const WorkList = ({ data }) => {
 							</NavLink>
 						</Link>
 					) : (
-						<Link href="/work/[slug]" as={`/work/${work.slug}`}>
+						<Link href="/work/[slug]" as={`/work/${work.slug}`} passHref>
 							<NavLink>
 								<Img
 									src={urlFor(work.image)
@@ -122,7 +122,7 @@ const Work = ({ works }) => {
 			</SectionDivider>
 			<Wrapper>
 				<WorkList data={data || [works]} />
-				<Link href="/work/WorkList">
+				<Link href="/work/WorkList" passHref>
 					<NavLink>
 						<Button>
 							<ButtonText>View More</ButtonText>

@@ -33,29 +33,38 @@ const Header = () => {
 	return (
 		<Container>
 			<Left>
-				<Link href="/">
+				<Link href="/" passHref>
 					<Logo>KK</Logo>
 				</Link>
 			</Left>
 			<Right ref={ref}>
 				<NavList>
 					<li>
-						<Link href={router.pathname === "/" ? "#about" : "/#about"}>
+						<Link
+							href={router.pathname === "/" ? "#about" : "/#about"}
+							passHref
+						>
 							<NavLink>About</NavLink>
 						</Link>
 					</li>
 					<li>
-						<Link href={router.pathname === "/" ? "#skills" : "/#skills"}>
+						<Link
+							href={router.pathname === "/" ? "#skills" : "/#skills"}
+							passHref
+						>
 							<NavLink>Skills</NavLink>
 						</Link>
 					</li>
 					<li>
-						<Link href={router.pathname === "/" ? "#work" : "/#work"}>
+						<Link href={router.pathname === "/" ? "#work" : "/#work"} passHref>
 							<NavLink>Work</NavLink>
 						</Link>
 					</li>
 					<li>
-						<Link href={router.pathname === "/" ? "#contact" : "/#contact"}>
+						<Link
+							href={router.pathname === "/" ? "#contact" : "/#contact"}
+							passHref
+						>
 							<NavLink>Contact</NavLink>
 						</Link>
 					</li>
@@ -68,22 +77,31 @@ const Header = () => {
 				</HamburgerContainer>
 				<MobileNavList open={open} onClick={() => setOpen(!open)}>
 					<li>
-						<Link href={router.pathname === "/" ? "#about" : "/#about"}>
+						<Link
+							href={router.pathname === "/" ? "#about" : "/#about"}
+							passHref
+						>
 							<MobileNavLink>About</MobileNavLink>
 						</Link>
 					</li>
 					<li>
-						<Link href={router.pathname === "/" ? "#skills" : "/#skills"}>
+						<Link
+							href={router.pathname === "/" ? "#skills" : "/#skills"}
+							passHref
+						>
 							<MobileNavLink>Skills</MobileNavLink>
 						</Link>
 					</li>
 					<li>
-						<Link href={router.pathname === "/" ? "#work" : "/#work"}>
+						<Link href={router.pathname === "/" ? "#work" : "/#work"} passHref>
 							<MobileNavLink>Work</MobileNavLink>
 						</Link>
 					</li>
 					<li>
-						<Link href={router.pathname === "/" ? "#contact" : "/#contact"}>
+						<Link
+							href={router.pathname === "/" ? "#contact" : "/#contact"}
+							passHref
+						>
 							<MobileNavLink>Contact</MobileNavLink>
 						</Link>
 					</li>

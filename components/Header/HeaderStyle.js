@@ -48,6 +48,7 @@ export const NavList = styled.ul`
 export const NavLink = styled.a`
 	font-size: 2rem;
 	line-height: 32px;
+	color: black;
 	&:hover {
 		text-decoration: underline;
 		cursor: pointer;
@@ -112,6 +113,9 @@ export const MobileNavList = styled.ul`
 		display: flex;
 		top: 90px;
 	}
+	@media ${(props) => props.theme.breakpoints.sm} {
+		top: 60px;
+	}
 
 	li {
 		&:hover {
@@ -125,6 +129,7 @@ export const MobileNavLink = styled.a`
 	height: 40px;
 	width: 100vw;
 	text-align: center;
+	color: black;
 `;
 export const Blur = styled.div`
 	display: none;

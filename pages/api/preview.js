@@ -7,7 +7,7 @@ export default async function enablePreview(req, res) {
 	) {
 		return res.status(401).json({ message: "Invalid token" });
 	}
-	const work = await getWorkBySlug(req.query.slug);
+	const work = await getWorkBySlug(req.query.slug, true);
 
 	if (!work) {
 		return res.status(401).json({ message: "Invalid Slug" });

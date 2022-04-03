@@ -25,7 +25,7 @@ import {
 	LinkIcon,
 	NavLink,
 	ButtonText,
-} from "./WorkListStyle";
+} from "../../styles/WorkListStyle";
 
 const WorkListCard = ({ data }) => {
 	return (

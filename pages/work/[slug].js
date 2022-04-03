@@ -17,7 +17,7 @@ import {
 	Github,
 	Medium,
 	LinkIcon,
-} from "./WorkPageStyle";
+} from "../../styles/WorkPageStyle";
 import PreviewAlert from "../../components/PreviewAlert/PreviewAlert";
 import { useRouter } from "next/router";
 import ErrorPage from "next/error";

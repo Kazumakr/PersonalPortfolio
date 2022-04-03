@@ -31,11 +31,19 @@ const WorkList = ({ data }) => {
 		page.map((work, index) => (
 			<WorkSection key={index}>
 				<Left>
-					<Link href={work.projectlink} passHref>
-						<NavLink target="_blank">
-							<Title>{work.title}</Title>
-						</NavLink>
-					</Link>
+					{work.projectlink ? (
+						<Link href={work.projectlink} passHref>
+							<NavLink target="_blank">
+								<Title>{work.title}</Title>
+							</NavLink>
+						</Link>
+					) : (
+						<Link href="/work/[slug]" as={`/work/${work.slug}`}>
+							<NavLink>
+								<Title>{work.title}</Title>
+							</NavLink>
+						</Link>
+					)}
 					<Desc>{work.description}</Desc>
 					<Tech>{work.tech}</Tech>
 					<Link href="/work/[slug]" as={`/work/${work.slug}`}>
@@ -70,17 +78,31 @@ const WorkList = ({ data }) => {
 					</IconContainer>
 				</Left>
 				<Right>
-					<Link href={work.projectlink} passHref>
-						<NavLink target="_blank">
-							<Img
-								src={urlFor(work.image)
-									.height(400)
-									.crop("center")
-									.fit("clip")
-									.url()}
-							/>
-						</NavLink>
-					</Link>
+					{work.projectlink ? (
+						<Link href={work.projectlink} passHref>
+							<NavLink target="_blank">
+								<Img
+									src={urlFor(work.image)
+										.height(400)
+										.crop("center")
+										.fit("clip")
+										.url()}
+								/>
+							</NavLink>
+						</Link>
+					) : (
+						<Link href="/work/[slug]" as={`/work/${work.slug}`}>
+							<NavLink>
+								<Img
+									src={urlFor(work.image)
+										.height(400)
+										.crop("center")
+										.fit("clip")
+										.url()}
+								/>
+							</NavLink>
+						</Link>
+					)}
 				</Right>
 			</WorkSection>
 		))
@@ -88,8 +110,9 @@ const WorkList = ({ data }) => {
 };
 
 const Work = ({ works }) => {
-	const { data, size, setSize, hitEnd } = useGetWorksPages({
+	const { data } = useGetWorksPages({
 		works,
+		limit: 3,
 	});
 	return (
 		<Container id="work">
@@ -99,18 +122,13 @@ const Work = ({ works }) => {
 			</SectionDivider>
 			<Wrapper>
 				<WorkList data={data || [works]} />
-				{hitEnd ? null : (
-					<Button onClick={() => setSize(size + 1)} disabled={hitEnd}>
-						<ButtonText>Load More</ButtonText>
-					</Button>
-				)}
-				{/* <Link href="/work/WorkList">
+				<Link href="/work/WorkList">
 					<NavLink>
 						<Button>
 							<ButtonText>View More</ButtonText>
 						</Button>
 					</NavLink>
-				</Link> */}
+				</Link>
 			</Wrapper>
 		</Container>
 	);

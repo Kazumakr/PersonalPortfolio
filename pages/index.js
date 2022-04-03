@@ -22,7 +22,7 @@ export default function Home({ works, preview }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-	const works = await getPaginatedWork({ offset: 0 });
+	const works = await getPaginatedWork({ offset: 0, limit: 3 });
 	return {
 		props: {
 			works,

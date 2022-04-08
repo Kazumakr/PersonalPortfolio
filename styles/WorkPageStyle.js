@@ -27,7 +27,6 @@ export const Title = styled.h1`
 `;
 export const Desc = styled.p`
 	font-weight: 300;
-	/* max-width: 380px; */
 	font-size: 24px;
 	line-height: 40px;
 	margin-bottom: 10px;
@@ -62,7 +61,7 @@ export const ButtonText = styled.span`
 	}
 `;
 export const Button = styled.button`
-	width: 150px;
+	width: 180px;
 	padding: 10px;
 	background: none;
 	border: 2px solid black;
@@ -95,7 +94,7 @@ export const Button = styled.button`
 		}
 	}
 	@media ${(props) => props.theme.breakpoints.sm} {
-		width: 130px;
+		width: 150px;
 		padding: 7px;
 	}
 `;

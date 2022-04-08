@@ -1,7 +1,7 @@
 export default {
 	fonts: {
-		title: "sans-sarif",
-		main: "sans-sarif",
+		title: "Lora, sans-sarif",
+		main: "Lora,sans-sarif",
 	},
 	breakpoints: {
 		sm: "screen and (max-width: 640px)",

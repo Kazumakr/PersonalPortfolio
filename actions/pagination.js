@@ -18,7 +18,7 @@ export const useGetWorksPages = ({ limit = 3 }) => {
 	let hitEnd = false;
 	const { data } = results;
 	if (data) {
-		hitEnd = data[data.length - 1].length === 0;
+		hitEnd = data[data.length - 1].length < limit;
 	}
 
 	return { ...results, hitEnd };
